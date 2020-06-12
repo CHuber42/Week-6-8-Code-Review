@@ -91,7 +91,7 @@ Phase 9: Pre-Migration Build to Confirm integrity of work (Done? YES)
 
 Phase 10: Add Initial Migration (Done? YES)  
 
-Phase 11: Verify DB Functionality/Routes with Postman (Done/ NO)  
+Phase 11: Verify DB Functionality/Routes with Postman (Done/ YES)  
 
 Phase 12: "Extra Exploration": Swagger (TBD)
 

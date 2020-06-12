@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
 
 namespace AnimalShelter.Controllers
 {
@@ -45,7 +44,7 @@ namespace AnimalShelter.Controllers
       _db.SaveChanges();
     }
 
-    [HttpPost]
+    [HttpDelete("{id}")]
     public void Delete(int id)
     {
       Animal animalToDelete = _db.Animals.FirstOrDefault(entry => entry.AnimalId == id);
