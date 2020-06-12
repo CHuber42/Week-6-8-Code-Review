@@ -57,8 +57,12 @@ Example:
 http://localhost:5000/api/animals?[breed]=[tabby]  
 
 Special format for age-based filtering:  
-Age numbers also required a "comparison" string of either "less_than" or "greater_than" to filter based on age.  
-Age-based filters are inclusive; {"comparison": "greater_than", "Age": 3} will return animals greater than or equal to age 3.  
+Age numbers also required a "filter" string of either "less_than" or "greater_than" to filter based on age.  
+Age-based filters are inclusive; {"filter": "greater_than", "Age": 3} will return animals greater than or equal to age 3.  
+
+A random animal can be viewed in a similar fashion; post an other-wise empty GET request to api/animals, BUT INCLUDE:  
+?filter=random, yielding a query of:  http://localhost:5000/api/animals?filter=random
+OR, through swagger (see below) enter "random" in the "filter" field.  
 
 An animal can be deleted with a DELETE request to:  
 http://localhost:5000/api/animals/[AnimalId]  

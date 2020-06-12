@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace AnimalShelter.Controllers
 {
@@ -17,9 +18,15 @@ namespace AnimalShelter.Controllers
     }
 
     [HttpGet]
-    public ActionResult <IEnumerable<Animal>> Get(string name, string gender, string species, int age, string breed, string comparison)
+    public ActionResult <IEnumerable<Animal>> Get(string name, string gender, string species, int age, string breed, string filter)
     {
       var query = _db.Animals.AsQueryable();
+      if (filter == "random")
+      {
+        Random rand = new Random();
+        int newRandom = rand.Next(query.Count());
+        return query.OrderBy(x => x.AnimalId).Skip(newRandom).Take(1).ToList();
+      }
       if (name != null)
       {
         query = query.Where(entry => entry.Name == name);
@@ -32,11 +39,11 @@ namespace AnimalShelter.Controllers
       {
         query = query.Where(entry => entry.Species == species);
       }
-      if (comparison == "less_than")
+      if (filter == "less_than")
       {
         query = query.Where(entry => entry.Age <= age);
       }
-      else if (comparison == "greater_than")
+      else if (filter == "greater_than")
       {
         query = query.Where(entry => entry.Age >= age);
       }
