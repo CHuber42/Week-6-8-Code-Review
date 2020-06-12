@@ -7,6 +7,8 @@ using System;
 
 namespace AnimalShelter.Controllers
 {
+  [Route("api/[controller]")]
+  [ApiController]
   public class AnimalsController : ControllerBase
   {
     private AnimalShelterContext _db;
@@ -39,7 +41,7 @@ namespace AnimalShelter.Controllers
     public void Put(int id, [FromBody]Animal animal)
     {
       animal.AnimalId = id;
-      _db.Entry(animal).State.EntityState.Modified;
+      _db.Entry(animal).State = EntityState.Modified;
       _db.SaveChanges();
     }
 

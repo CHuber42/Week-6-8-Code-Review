@@ -87,9 +87,9 @@ Phase 7: Populate "Delete" Route (Done? YES)
 
 Phase 8: Populate "Details/Get" Route (Done? YES)  
 
-Phase 9: Pre-Migration Build to Confirm integrity of work (Done? NO)  
+Phase 9: Pre-Migration Build to Confirm integrity of work (Done? YES)  
 
-Phase 10: Add Initial Migration (Done? NO)  
+Phase 10: Add Initial Migration (Done? YES)  
 
 Phase 11: Verify DB Functionality/Routes with Postman (Done/ NO)  
 
