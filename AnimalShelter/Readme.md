@@ -79,11 +79,11 @@ Phase 3: Add Controller scaffolding (empty routes) (Done? YES)
 
 Phase 4: Populate "Index/GetAll" Route (Done? YES)  
 
-Phase 5: Populate "Create" Route (Done? NO)  
+Phase 5: Populate "Create" Route (Done? YES)  
 
-Phase 6: Populate "Put" Route (Done? NO)  
+Phase 6: Populate "Put" Route (Done? YES)  
 
-Phase 7: Populate "Delete" Route (Done? NO)  
+Phase 7: Populate "Delete" Route (Done? YES)  
 
 Phase 8: Populate "Details/Get" Route (Done? YES)  
 
