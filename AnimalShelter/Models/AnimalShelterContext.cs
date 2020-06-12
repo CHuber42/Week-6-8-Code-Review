@@ -9,7 +9,7 @@ namespace AnimalShelter.Models
     {
     }
 
-
+    public DbSet<Vaccination> Vaccinations {get;set;}
     public DbSet<Animal> Animals {get; set;}
   }
 }

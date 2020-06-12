@@ -164,7 +164,7 @@ Phase 13: "Extra Exploration": Swagger (Done? YES)
 
 RANDOM endroute that returns random Animal (Done? YES)  
 
-Implement Pagination (Done? NO)  
+Implement Pagination (Done? YES)  
 
 Refine Age-Based Filtering for >= or <= options/params (Done? YES)    
 

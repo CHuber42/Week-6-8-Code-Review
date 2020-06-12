@@ -1,4 +1,5 @@
-
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AnimalShelter.Models
 {
@@ -13,5 +14,7 @@ namespace AnimalShelter.Models
     public string Breed {get; set;}
 
     public int Age {get; set;}
+    [NotMapped]
+    public virtual List<string> Vaccinations {get;set;}
   }
 }
