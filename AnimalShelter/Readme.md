@@ -40,25 +40,19 @@ To run: Navigate to the root folder in a terminal and enter "dotnet run".
 
 To interact with this app & its database, API queries will be necessary. There are many free softwares for this, but I used Postman (https://www.postman.com/downloads/)  
 
-To see all reviews, issue a get request to http://localhost:5000/api/reviews  
-Current custom-sorts for queries utilize the "filter" field. EG:  
+The Database Schema for animals is :  
+<ul>
+<li>"Name": "string"</li>  
+<li>"Age": "integer"</li>  
+<li>"Breed": "string"</li>  
+<li>"Species": "string"</li>  
+<li>"Gender": "string"</li>  
+</ul>
 
-GET http://localhost:5000/api/reviews?filter=number_of_ratings  
-returns reviews sorted highest-rated to lowest-rated by total number of reviews  
+To see all animals, issue a get request to http://localhost:5000/api/animals  
+ 
 
-GET http://localhost:5000/api/reviews?filter=overall_ratings  
-returns reviews sorted highest-rated to lowest-rated by average rating   
 
-GET http://localhost:5000/api/reviews?filter=random  
-returns a random review   
-
-POSTs to the database can be done utilizing POST to api/reviews.  
-
-Edits and deletes are qualified; unless the given username in the PUT or DELETE commands match the given review ID, it will fail.  Example:
-
-DELETE http://localhost:5000/api/reviews/[id] | AND | "name" in body as username, to succesfully delete.  
-
-PUT http://localhost:5000/api/reviews/[id] | AND | { "City": "X", "Country": "Y", "username": "Z", "rating": 0.0}   
 
 
 
@@ -79,7 +73,7 @@ Commit history clearly shows eight hours of work.
 
 Phase 1: Build Framework (bypass 'dotnet new mvc' for better practice) (Done? YES)  
 
-Phase 2: Populate Models (dbcontext and animal entity) (Done? NO)  
+Phase 2: Populate Models (dbcontext and animal entity) (Done? YES)  
 
 Phase 3: Add Controller scaffolding (empty routes) (Done? NO)  
 
