@@ -79,7 +79,15 @@ An Animal can have its details edited with a PUT request to:
 http://localhost:5000/api/animals/[id]  
 AND must contain the fields specified in the CREATE route detailed above.  
 
+##### Using the API via SwaggerGUI
 
+With the program/API running(See: Instructions/Installations), open a browser and navigate to:  
+localhost:5000/index.html  
+
+This will present you with a graphical user interface (Swagger/Swashbuckle) that will allow you to 
+interact with the API in a more intuitive setting.  
+
+GET/POST/PUT(edit)/DELETE routes are still managed using the requirements outlined in the above section (API Queries).  
 
 
 ##### Development Description:
