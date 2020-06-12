@@ -27,7 +27,7 @@ namespace AnimalShelter
 
              services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("Travel", new OpenApiInfo { Title = "Travel API", Version = "v1" });
+                c.SwaggerDoc("AnimalShelter", new OpenApiInfo { Title = "Animal Shelter", Version = "v1" });
             });
         }
 
@@ -37,7 +37,7 @@ namespace AnimalShelter
 
             app.UseSwaggerUI( c=>
             {
-                c.SwaggerEndpoint("/swagger/Travel/swagger.json", "My API V1");
+                c.SwaggerEndpoint("/swagger/AnimalShelter/swagger.json", "My API V1");
                 c.RoutePrefix = string.Empty;
             });
 
