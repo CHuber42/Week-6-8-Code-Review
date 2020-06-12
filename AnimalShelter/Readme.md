@@ -77,8 +77,29 @@ Commit history clearly shows eight hours of work.
 
 ##### Development specs/Phases:
 
-Phase 1: Build Framework (bypass 'dotnet new mvc' for better practice) (Done? NO)
+Phase 1: Build Framework (bypass 'dotnet new mvc' for better practice) (Done? YES)  
 
+Phase 2: Populate Models (dbcontext and animal entity) (Done? NO)  
+
+Phase 3: Add Controller scaffolding (empty routes) (Done? NO)  
+
+Phase 4: Populate "Index/Get" Route (Done? NO)  
+
+Phase 5: Populate "Create" Route (Done? NO)  
+
+Phase 6: Populate "Put" Route (Done? NO)  
+
+Phase 7: Populate "Delete" Route (Done? NO)  
+
+Phase 8: Populate "Details/Get" Route (Done? NO)  
+
+Phase 9: Pre-Migration Build to Confirm integrity of work (Done? NO)  
+
+Phase 10: Add Initial Migration (Done? NO)  
+
+Phase 11: Verify DB Functionality/Routes with Postman (Done/ NO)  
+
+Phase 12: "Extra Exploration": Swagger (TBD)
 
 
 ##### _Contact_:
