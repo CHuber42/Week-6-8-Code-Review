@@ -51,18 +51,6 @@ The Database Schema for animals is :
 
 To see all animals, issue a GET request to http://localhost:5000/api/animals  
 
-A filtered list of animals can be accessed with a GET request of the following format:  
-http://localhost:5000/api/animals?[attribute]=[MyFilter]  
-Example:  
-http://localhost:5000/api/animals?[breed]=[tabby]  
-
-Special format for age-based filtering:  
-Age numbers also required a "filter" string of either "less_than" or "greater_than" to filter based on age.  
-Age-based filters are inclusive; {"filter": "greater_than", "Age": 3} will return animals greater than or equal to age 3.  
-
-A random animal can be viewed in a similar fashion; post an other-wise empty GET request to api/animals, BUT INCLUDE:  
-?filter=random, yielding a query of:  http://localhost:5000/api/animals?filter=random
-OR, through swagger (see below) enter "random" in the "filter" field.  
 
 An animal can be deleted with a DELETE request to:  
 http://localhost:5000/api/animals/[AnimalId]  
@@ -86,6 +74,40 @@ Or, obviously, with a filtered GET request to the generic route, based on a know
 An Animal can have its details edited with a PUT request to:  
 http://localhost:5000/api/animals/[id]  
 AND must contain the fields specified in the CREATE route detailed above.  
+
+##### Custom Search Filters
+
+A filtered list of animals can be acquired according to a number of filters appended to the api/animals GET request:  
+
+Age-based Filtering:  
+Required: Age (an integer) and a "filter" string of either "less_than" or "greater_than" to filter based on age.  
+Age-based filters are inclusive; {"filter": "greater_than", "Age": 3} will return animals greater than or equal to age 3.  
+Example: http://localhost:5000/api/animals?age=3&filter=greater_than  
+
+Breed-based Filtering:  
+Required: "Breed": string.  
+Example: http://localhost:5000/api/animals?breed=tabby  
+
+Gender-based Filtering:  
+Required: "Gender": string.  
+Example: http://localhost:5000/api/animals?gender=female  
+
+Name-based Filtering:  
+Required: "Name": string.  
+Example: http://localhost:5000/api/animals?name=rosa  
+
+Species-based Filtering:  
+Required: "Species": string.  
+Example: http://localhost:5000/api/animals?species=cat    
+
+Random Animal:   
+Required: "filter"="random".  
+Example: http://localhost:5000/api/animals?filter=random
+
+Paged Results:  
+Required: "Page": int; "PageLength: int.  
+Example: http://localhost:5000/api/animals?page=0&pagelength=4    
+
 
 ##### Using the API via SwaggerGUI
 
@@ -140,7 +162,7 @@ Phase 12: Add filtering to DB responses in GetAll (Done? YES)
 
 Phase 13: "Extra Exploration": Swagger (Done? YES)
 
-RANDOM endroute that returns random Animal (Done? NO)  
+RANDOM endroute that returns random Animal (Done? YES)  
 
 Implement Pagination (Done? NO)  
 

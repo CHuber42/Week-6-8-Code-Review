@@ -18,7 +18,7 @@ namespace AnimalShelter.Controllers
     }
 
     [HttpGet]
-    public ActionResult <IEnumerable<Animal>> Get(string name, string gender, string species, int age, string breed, string filter)
+    public ActionResult <IEnumerable<Animal>> Get(string name, string gender, string species, int age, string breed, string filter, int Page, int PageLength)
     {
       var query = _db.Animals.AsQueryable();
       if (filter == "random")
@@ -50,6 +50,10 @@ namespace AnimalShelter.Controllers
       if (breed != null)
       {
         query = query.Where(entry => entry.Breed == breed);
+      }
+      if (PageLength != 0)
+      {
+        return query.OrderBy(x => x.AnimalId).Skip((Page-1)*PageLength).Take(PageLength).ToList();
       }
       return query.ToList();
     }
