@@ -77,7 +77,7 @@ Phase 2: Populate Models (dbcontext and animal entity) (Done? YES)
 
 Phase 3: Add Controller scaffolding (empty routes) (Done? YES)  
 
-Phase 4: Populate "Index/Get" Route (Done? NO)  
+Phase 4: Populate "Index/GetAll" Route (Done? YES)  
 
 Phase 5: Populate "Create" Route (Done? NO)  
 
@@ -85,7 +85,7 @@ Phase 6: Populate "Put" Route (Done? NO)
 
 Phase 7: Populate "Delete" Route (Done? NO)  
 
-Phase 8: Populate "Details/Get" Route (Done? NO)  
+Phase 8: Populate "Details/Get" Route (Done? YES)  
 
 Phase 9: Pre-Migration Build to Confirm integrity of work (Done? NO)  
 

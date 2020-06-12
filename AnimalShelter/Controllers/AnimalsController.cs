@@ -7,7 +7,7 @@ using System;
 
 namespace AnimalShelter.Controllers
 {
-  public class AnimalsController : BaseController
+  public class AnimalsController : ControllerBase
   {
     private AnimalShelterContext _db;
     public AnimalsController(AnimalShelterContext db)
@@ -18,13 +18,14 @@ namespace AnimalShelter.Controllers
     [HttpGet]
     public ActionResult <IEnumerable<Animal>> Get(string name, string gender, string species, int age, string breed)
     {
-      
+      var query = _db.Animals.AsQueryable();
+      return query.ToList();
     }
 
     [HttpGet("{id}")]
     public Animal Get(int id)
-    {
-
+    {     
+      return _db.Animals.FirstOrDefault(entry => entry.AnimalId == id);
     }
 
     [HttpPost]
@@ -42,7 +43,7 @@ namespace AnimalShelter.Controllers
     [HttpPost]
     public void Delete(int id)
     {
-      
+
     }
 
   }
