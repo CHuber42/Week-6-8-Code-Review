@@ -60,8 +60,16 @@ namespace AnimalShelter.Controllers
 
     [HttpGet("{id}")]
     public Animal Get(int id)
-    {     
-      return _db.Animals.FirstOrDefault(entry => entry.AnimalId == id);
+    { 
+      Animal animalToReturn = _db.Animals.FirstOrDefault(entry => entry.AnimalId == id);
+      IEnumerable<AnimalVaccination> theseVaccinationLinks = _db.AnimalVaccinations.Where(entry => entry.AnimalId == id);
+      foreach (AnimalVaccination link in theseVaccinationLinks)
+      {
+        Vaccination vaccineToAdd = _db.Vaccinations.FirstOrDefault(entry => entry.VaccinationId == link.VaccinationId);
+        string name = vaccineToAdd.Name;
+        animalToReturn.Add(name); 
+      }
+      return animalToReturn;
     }
 
     [HttpPost]

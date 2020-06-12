@@ -36,6 +36,16 @@ To run: Navigate to the root folder in a terminal and enter "dotnet run".
 
 3. Now run "Dotnet ef database update" to apply the changes to your personal database, which serves as the database for this app.  
 
+##### Using the API via SwaggerGUI
+
+With the program/API running(See: Instructions/Installations), open a browser and navigate to:  
+localhost:5000/index.html  
+
+This will present you with a graphical user interface (Swagger/Swashbuckle) that will allow you to 
+interact with the API in a more intuitive setting.  
+
+GET/POST/PUT(edit)/DELETE routes are still managed using the requirements outlined in the below section (API Queries).  
+
 ##### API Queries
 
 To interact with this app & its database, API queries will be necessary. There are many free softwares for this, but I used Postman (https://www.postman.com/downloads/)  
@@ -108,16 +118,19 @@ Paged Results:
 Required: "Page": int; "PageLength: int.  
 Example: http://localhost:5000/api/animals?page=0&pagelength=4    
 
+##### Extra Features (Vaccines/Vaccines List)
 
-##### Using the API via SwaggerGUI
+Vaccines can be accessed in much the same way as animals, however, they only possess a database ID and  
+correspoding description/name. This is merely "the database of possible vaccines that can be applied".  
 
-With the program/API running(See: Instructions/Installations), open a browser and navigate to:  
-localhost:5000/index.html  
+An animal can have a vaccine added to its record via the AnimalVaccines route. This is merely a join table  
+that connects the animals database to the vaccines database; entries are managed as relationships.  
+When adding or deleting an entry, the Animal's database Id and the Vaccine's database Id are required;  
+feel free to use the Get methods for the respective databases to ensure the correct record is entered.  
 
-This will present you with a graphical user interface (Swagger/Swashbuckle) that will allow you to 
-interact with the API in a more intuitive setting.  
-
-GET/POST/PUT(edit)/DELETE routes are still managed using the requirements outlined in the above section (API Queries).  
+An animal's vaccine records are not accessible through the generic GET route (api/animals).  
+To view vaccination records, please access the GET route specific to that animal's Id;  
+Example: api/animals/{2}  
 
 
 ##### Development Description:

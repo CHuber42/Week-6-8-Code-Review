@@ -15,6 +15,12 @@ namespace AnimalShelter.Models
 
     public int Age {get; set;}
     [NotMapped]
-    public virtual List<string> Vaccinations {get;set;}
+    public List<string> Vaccinations;
+
+    public void Add(string name)
+    {
+      Vaccinations = new List<string>();
+      Vaccinations.Add(name);
+    }
   }
 }
