@@ -54,7 +54,11 @@ To see all animals, issue a GET request to http://localhost:5000/api/animals
 A filtered list of animals can be accessed with a GET request of the following format:  
 http://localhost:5000/api/animals?[attribute]=[MyFilter]  
 Example:  
-http://localhost:5000/api/animals?[breed]=[tabby]
+http://localhost:5000/api/animals?[breed]=[tabby]  
+
+Special format for age-based filtering:  
+Age numbers also required a "comparison" string of either "less_than" or "greater_than" to filter based on age.  
+Age-based filters are inclusive; {"comparison": "greater_than", "Age": 3} will return animals greater than or equal to age 3.  
 
 An animal can be deleted with a DELETE request to:  
 http://localhost:5000/api/animals/[AnimalId]  
@@ -136,7 +140,7 @@ RANDOM endroute that returns random Animal (Done? NO)
 
 Implement Pagination (Done? NO)  
 
-Refine Age-Based Filtering for >= or <= options/params (Done? NO)    
+Refine Age-Based Filtering for >= or <= options/params (Done? YES)    
 
 Add many-to-many relationship with Vaccinations Database (Done? NO)  
 
