@@ -20,6 +20,26 @@ namespace AnimalShelter.Controllers
     public ActionResult <IEnumerable<Animal>> Get(string name, string gender, string species, int age, string breed)
     {
       var query = _db.Animals.AsQueryable();
+      if (name != null)
+      {
+        query = query.Where(entry => entry.Name == name);
+      }
+      if (gender != null)
+      {
+        query = query.Where(entry => entry.Gender == gender);
+      }
+      if (species != null)
+      {
+        query = query.Where(entry => entry.Species == species);
+      }
+      if (age != null)
+      {
+        query = query.Where(entry => entry.Age == age);
+      }
+      if (breed != null)
+      {
+        query = query.Where(entry => entry.Breed == breed);
+      }
       return query.ToList();
     }
 

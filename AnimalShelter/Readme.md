@@ -49,10 +49,35 @@ The Database Schema for animals is :
 <li>"Gender": "string"</li>  
 </ul>
 
-To see all animals, issue a get request to http://localhost:5000/api/animals  
+To see all animals, issue a GET request to http://localhost:5000/api/animals  
+
+A filtered list of animals can be accessed with a GET request of the following format:  
+http://localhost:5000/api/animals?[attribute]=[MyFilter]  
+Example:  
+http://localhost:5000/api/animals?[breed]=[tabby]
+
+An animal can be deleted with a DELETE request to:  
+http://localhost:5000/api/animals/[AnimalId]  
+
+An animal can be created with a POST request to:
+http://localhost:5000/api/animals  
+With body contents of the following format:  
+{  
+  "Name": "string",    
+  "Age": "integer",    
+  "Breed": "string",    
+  "Species": "string",    
+  "Gender": "string"    
+}  
  
+A specific Animal's details can be viewed with a GET request to that animal's ID in the route:  
+http://localhost:5000/api/animals/[id]  
+Or, obviously, with a filtered GET request to the generic route, based on a known trait  
+(Name, for example(See above))    
 
-
+An Animal can have its details edited with a PUT request to:  
+http://localhost:5000/api/animals/[id]  
+AND must contain the fields specified in the CREATE route detailed above.  
 
 
 
@@ -93,7 +118,7 @@ Phase 10: Add Initial Migration (Done? YES)
 
 Phase 11: Verify DB Functionality/Routes with Postman (Done? YES)  
 
-Phase 12: Add filtering to DB responses in GetAll (Done? NO)
+Phase 12: Add filtering to DB responses in GetAll (Done? YES)
 
 Phase N: "Extra Exploration": Swagger (TBD)
 
