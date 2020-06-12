@@ -128,8 +128,15 @@ Phase 11: Verify DB Functionality/Routes with Postman (Done? YES)
 
 Phase 12: Add filtering to DB responses in GetAll (Done? YES)
 
-Phase N: "Extra Exploration": Swagger (TBD)
+##### "Extra Exploration"
 
+Phase 13: "Extra Exploration": Swagger (Done? YES)
+
+RANDOM endroute that returns random Animal (Done? NO)  
+
+Implement Pagination (Done? NO)  
+
+Refine Age-Based Filtering for >= or <= options/params (Done? NO)    
 
 ##### _Contact_:
 
