@@ -75,7 +75,7 @@ Phase 1: Build Framework (bypass 'dotnet new mvc' for better practice) (Done? YE
 
 Phase 2: Populate Models (dbcontext and animal entity) (Done? YES)  
 
-Phase 3: Add Controller scaffolding (empty routes) (Done? NO)  
+Phase 3: Add Controller scaffolding (empty routes) (Done? YES)  
 
 Phase 4: Populate "Index/Get" Route (Done? NO)  
 
