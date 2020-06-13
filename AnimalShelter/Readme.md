@@ -181,7 +181,7 @@ Implement Pagination (Done? YES)
 
 Refine Age-Based Filtering for >= or <= options/params (Done? YES)    
 
-Add many-to-many relationship with Vaccinations Database (Done? NO)  
+Add many-to-many relationship with Vaccinations Database (Done? YES)  
 
 ##### _Contact_:
 
